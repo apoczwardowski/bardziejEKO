@@ -1,10 +1,12 @@
 <template>
 	<nav id="navbar">
-		<div class="navElementsContainer">
-			<a v-on:click="navAnimation()" class="navElement">Home</a>
-			<a v-on:click="navAnimation()" class="navElement">Lorem ipsum</a>
-			<a v-on:click="navAnimation()" class="navElement">Lorem ipsum</a>
-			<a v-on:click="navAnimation()" class="navElement">Lorem ipsum</a>
+		<div class="navElements">
+      <div class="navElementsContainer">
+        <a v-on:click="navAnimation()" class="navElement">Home</a>
+        <a v-on:click="navAnimation()" class="navElement">Lorem ipsum</a>
+        <a v-on:click="navAnimation()" class="navElement">Lorem ipsum</a>
+        <a v-on:click="navAnimation()" class="navElement">Lorem ipsum</a>
+      </div>
 		</div>
     <button v-on:click="navAnimation()" class="menuBtn">
       <div class="lineMenuBtn topMenuBtn"></div>
@@ -37,14 +39,13 @@ export default {
 	},
 
 	mounted(){
-		this.navTimeline.to('.navElementsContainer',{
-			height: '50px',
-			right: 0
+		this.navTimeline.to('.navElements',0.5,{
+			x: '-100%',
 		})
 				.to('.topMenuBtn',{
 					top: '50%',
 					rotate: '45deg'
-				}, '-=0.5')
+				},'-=0.25')
 				.to('.bottomMenuBtn',{
 					bottom: '50%',
 					rotate: '-45deg'
@@ -52,7 +53,7 @@ export default {
 				.to('.navElement',{
 					opacity: 1,
 					stagger: 0.05,
-				},'-=0.25')
+				}, '-=0.5').reverse()
 	},
 }
 
@@ -65,41 +66,53 @@ export default {
 // $green;
 // $dark-green;
 // $padding-main;
+
 @media(min-width: 280px){
 	#navbar {
 		position: fixed;
-		right: 25px;
-		width: 50vw;
-		min-width: 500px;
+		right: 0;
+		width: 100%;
+    height: 100vh;
+    transition: .3s ease;
 
-		.navElementsContainer{
+		.navElements{
 			position: absolute;
+      width: 100%;
+      height: 100%;
 			top: 0;
-			right: -150%;
+			right: -100%;
 			background: #000;
-			width: 100%;
-			height: 50px;
 			opacity: 1;
 			background: $light-green;
 			padding-right: 40px;
 			padding-left: 40px;
-			border-radius: 0px 0px 0px 200px;
-			display:  flex;
+      padding-top: 50px;
+      display: block;
 			justify-content: space-around;
 
+      .navElementsContainer{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .navElement{
+          display: block;
+          margin: 10px;
+          text-align: center;
+          line-height: 100px;
+          font-size: 20px;
+          border: 2px solid darken($light-green, 5);
+          height: 100px;
+          width: 280px;
+          color: lighten($yellow , 5);
+          cursor: pointer;
+          opacity: 0;
 
-			.navElement{
-				line-height: 50px;
-				height: 100%;
-				color: $dark-green;
-				cursor: pointer;
-				font-size: 15px;
-				opacity: 0;
-
-				&:hover{
-					color: $green;
-				}
-			}
+          &:hover{
+            color: $green;
+          }
+        }
+      }
 		}
 
 
@@ -109,7 +122,7 @@ export default {
 			width: 50px;
 			border-top-left-radius: 50px;
 			border-bottom-left-radius: 50px;
-			right: -25px;
+			right: 0px;
 			top: 0;
 			border: none;
 			background: $light-green;
@@ -140,6 +153,41 @@ export default {
 			}
 		}
 	}
+
+  @media(min-width: 768px){
+    #navbar{
+      width: 350px;
+    }
+  }
+
+  @media(min-width: 1025px){
+    #navbar{
+      width: 700px;
+      .navElements{
+        height: 50px;
+        border-radius: 200px;
+        width: 700px;
+
+        .navElementsContainer{
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          padding-left: 40px;
+          padding-right: 40px;
+
+          .navElement{
+            border: none;
+            margin: 0;
+            display: initial;
+            font-size: 15px;
+            height: 20px;
+            line-height: 20px;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
 
 	:focus{
 		outline: none;
