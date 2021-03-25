@@ -74,6 +74,7 @@ export default {
 		width: 100%;
     height: 100vh;
     transition: .3s ease;
+		z-index: 10000;
 
 		.navElements{
 			position: absolute;
