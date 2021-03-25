@@ -1,5 +1,6 @@
 <template>
-	<nav id="navbar"></nav>
+	<nav id="navbar">
+  </nav>
 </template>
 
 <script>
@@ -14,7 +15,6 @@ export default {
 // $light-green;
 // $green;
 // $dark-green;
-
 // $padding-main;
 
 #navbar {
