@@ -1,73 +1,64 @@
 <template v-for="(title, text) in articles">
 	<section id="articles" >
-		<div class="articlesleft">
-			<div class="articleleft">
+		<h1 class="articlesheader">Artykuły opisujące szczegółowo sytuację z zanieczyszczeniem na świecie</h1>
+		<div class="articles">
+			<div class="article">
 				<div class="artheader">
 					<h1>{{  articles.articleone.title  }}</h1>
 				</div>
-				<div class="artmiddle">
 					<div class="artcont">
-						<p>
-							{{  articles.articleone.text  }}
-						</p>
-					</div>
-					<a href="#" class="artfull">
-
-					</a>
+					<p>
+						{{  articles.articleone.text  }}
+					</p>
 				</div>
+				<a href="#" class="artfull">
+
+				</a>
 			</div>
 
-			<div class="articleleft">
+			<div class="article">
 				<div class="artheader">
 					<h1>{{  articles.articletwo.title  }}</h1>
 				</div>
-				<div class="artmiddle">
-					<div class="artcont">
-						<p>
-							{{  articles.articletwo.text  }}
-						</p>
-					</div>
-					<a href="#" class="artfull">
-
-					</a>
+				<div class="artcont">
+					<p>
+						{{  articles.articletwo.text  }}
+					</p>
 				</div>
-			</div>
-		</div>
+				<a href="#" class="artfull">
 
-		<div class="articlesright">
-			<div class="articleright">
+				</a>
+			</div>
+
+			<div class="article">
 				<div class="artheader">
 					<h1>{{  articles.articlethree.title  }}</h1>
 				</div>
-				<div class="artmiddle">
-					<a href="#" class="artfull">
 
-					</a>
-					<div class="artcont">
-						<p>
-							{{  articles.articlethree.text  }}
-						</p>
-					</div>
+				<div class="artcont">
+					<p>
+						{{  articles.articlethree.text  }}
+					</p>
 				</div>
+				<a href="#" class="artfull">
+
+				</a>
 			</div>
-
-			<div class="articleright">
+			<div class="article">
 				<div class="artheader">
-					<h1>{{  articles.articlefour.title  }}</h1>
+					<h1>{{  articles.articlethree.title  }}</h1>
 				</div>
-				<div class="artmiddle">
-					<a href="#" class="artfull">
 
-					</a>
-					<div class="artcont">
-						<p>
-							{{  articles.articlefour.text  }}
-						</p>
-					</div>
+				<div class="artcont">
+					<p>
+						{{  articles.articlethree.text  }}
+					</p>
 				</div>
+				<a href="#" class="artfull">
+
+				</a>
 			</div>
 		</div>
-
 	</section>
 </template>
 
@@ -120,28 +111,40 @@ export default {
 
 // $padding-main;
 
+$mobile: 767px;
+$tablet: 1030px;
+
 #articles {
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.articlesheader {
+	text-align: center;
+	color: $dark-green;
+	font-size: 3vw;
+	width: 70vw;
+	margin-bottom: 7vw;
+}
+
+.articles {
+	display: flex;
+	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: space-between;
-	padding: 4em 0em 1em 0em;
-	background: pink;
+	justify-content: space-evenly;
+	padding: 4em 0em 0em 0em;
 }
 
-.articlesleft {
+.article {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 35vw;
-}
-
-.articleleft {
-	display: block;
-	flex-direction: column;
-	justify-content: center;
-	height: 15vw;
-	width: 35vw;
-	border-radius: 0px 4vw 4vw 0px;
+	align-items: center;
+	margin-bottom: 10vw;
+	height: 18vw;
+	width: 30vw;
+	border-radius: 4vw 4vw 4vw 4vw;
 	background: $green;
 
 	.artheader {
@@ -152,28 +155,16 @@ export default {
 		padding: 0;
 		height: 4vw;
 		width: 80%;
-		border-radius: 0em 5em 5em 0em;
+		border-radius: 5em 5em 5em 5em;
 		transform: translateY(-50%);
 		background: $light-green;
 
 		h1 {
+			text-align: center;
 			padding: 1vw;
-			font-size: 2.2vw;
+			font-size: 2vw;
 			color: $dark-green;
-			transform: translateX(8%);
 		}
-	}
-
-	.artmiddle {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		margin: 0;
-		padding: 0;
-		width: 39vw;
-		height: 15vw;
-		transform: translateY(-25%);
 	}
 
 	.artcont {
@@ -181,6 +172,7 @@ export default {
 		justify-content: center;
 		align-items: center;
 		width: 30vw;
+		padding-bottom: 25%;
 		p {
 			padding: 0em 0em 0em 0em;
 			font-weight: 500;
@@ -192,82 +184,101 @@ export default {
 		}
 	}
 	.artfull {
+		position: absolute;
 		height: 8vw;
 		width: 8vw;
 		border-radius: 100%;
 		background: $dark-green;
+		transform:translateY(175%)
 	}
 }
 
-.articlesright {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 35vw;
+@media screen and (max-width: $tablet)
+{
+
+.articlesheader {
+	text-align: center;
+	color: $dark-green;
+	font-size: 4vw;
+	width: 80vw;
+	margin-bottom: 7vw;
 }
 
-.articleright {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 15vw;
-	width: 35vw;
-	border-radius: 4vw 0vw 0vw 4vw;
-	background: $green;
+.article {
+	margin-bottom: 20vw;
+	height: 40vw;
+	width: 60vw;
+	border-radius: 6vw 6vw 6vw 6vw;
 
 	.artheader {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		align-self: flex-end;
-		margin: 0;
-		padding: 0;
-		height: 4vw;
-		width: 80%;
-		border-radius: 5em 0em 0em 5em;
-		transform: translateY(-50%);
-		background: $light-green;
+		height: 7.5vw;
 
 		h1 {
 			padding: 1vw;
-			font-size: 2.2vw;
-			color: $dark-green;
-			transform: translateX(8%);
+			font-size: 4.2vw;
 		}
 	}
 
-	.artmiddle {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		align-self: flex-end;
-		margin: 0;
-		padding: 0;
-		width: 39vw;
-		height: 15vw;
-		transform: translateY(-15%);
-	}
-
 	.artcont {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 30vw;
+		width: 60vw;
+		padding-bottom: 25%;
 		p {
-			padding: 0em 0em 0em 0em;
-			font-weight: 500;
-			font-size: 1.15vw;
-			text-align: center;
-			letter-spacing: 0.06em;
-			color: $yellow;
+			font-size: 2.5vw;
 			width: 80%;
 		}
 	}
 	.artfull {
-		height: 8vw;
-		width: 8vw;
+		position: absolute;
+		height: 17.5vw;
+		width: 17.5vw;
 		border-radius: 100%;
 		background: $dark-green;
+		transform: translateY(180%);
 	}
+}
+}
+
+@media screen and (max-width: $mobile)
+{
+
+.articlesheader {
+	text-align: center;
+	color: $dark-green;
+	font-size: 4.5vw;
+	width: 90vw;
+	margin-bottom: 7vw;
+}
+
+.article {
+	margin-bottom: 20vw;
+	height: 60vw;
+	width: 80vw;
+
+	.artheader {
+		height: 10vw;
+
+		h1 {
+			padding: 1vw;
+			font-size: 5.5vw;
+		}
+	}
+
+	.artcont {
+		width: 80vw;
+		padding-bottom: 25%;
+		p {
+			font-size: 3.5vw;
+			width: 80%;
+		}
+	}
+	.artfull {
+		position: absolute;
+		height: 25vw;
+		width: 25vw;
+		border-radius: 100%;
+		background: $dark-green;
+		transform: translateY(190%);
+	}
+}
 }
 </style>
