@@ -11,10 +11,10 @@
 		</div>
 		<article class='introduction'>
 			<h2>Czemu uważamy, że to takie ważne?</h2>
-			<div class='card'>
-				<div class='background'>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id vestibulum libero. Nullam quis cursus mauris, sit amet imperdiet enim. Nam at urna sed urna blandit imperdiet. Donec non ante dapibus, commodo tellus et, scelerisque neque. Phasellus lorem turpis, tincidunt quis suscipit eu, viverra vitae tortor. Praesent vehicula feugiat tellus eu hendrerit.</p>
-				</div>
+			<div class='background'>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id vestibulum libero. Nullam quis cursus mauris, sit amet imperdiet enim. Nam at urna sed urna blandit imperdiet. Donec non ante dapibus, commodo tellus et, scelerisque neque. Phasellus lorem turpis, tincidunt quis suscipit eu, viverra vitae tortor. Praesent vehicula feugiat tellus eu hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id vestibulum libero. Nullam quis cursus mauris, sit amet imperdiet enim. Nam at urna sed urna blandit imperdiet. Phasellus lorem turpis, tincidunt quis suscipit eu. Lorem ipsum dolor sit amet.</p>
+			</div>
+			<div class='icon-background'>
 				<img class='planet' src='@/assets/images/planet.svg'>
 			</div>
 		</article>
@@ -35,10 +35,9 @@ export default {
 // $dark-green;
 // $padding-main;
 
-$mobile: 767px;
-$tablet: 1030px;
-$circle-size: 10vw;
-$planet-size: 250px;
+// breakpoints
+$tablets: 1200px;
+$smartphones: 760px;
 
 #hero {
 	overflow-x: hidden;
@@ -48,24 +47,24 @@ $planet-size: 250px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 75vh;
+		height: 50vh;
 
-		// smartphones only
-		@media (max-width: $mobile) {
-			height: 50vh;
+		// tablets
+		@media (max-width: $tablets) {
+			height: 25vh;
 		}
 
-		// tablets only
-		@media (max-width: $tablet) {
-			height: 70vh;
+		// smartphones
+		@media (max-width: $smartphones) {
+			height: 45vh;
 		}
 
 		header {
 			display: flex;
 			align-items: center;
 
-			// smartphones only
-			@media (max-width: $tablet) {
+			// smartphones
+			@media (max-width: $smartphones) {
 				flex-direction: column;
 			}
 
@@ -74,17 +73,15 @@ $planet-size: 250px;
 				color: rgb(39, 22, 0);
 				margin-right: 0.25em;
 
-				// mobiles
-				@media (max-width: $tablet) {
-					font-size: 10vw;
-					text-align: center;
-					margin-right: 0;
-					margin-bottom: 0.5em;
+				// tablets
+				@media (max-width: $tablets) {
+					font-size: 5vw;
 				}
 
-				// smartphones only
-				@media (max-width: $mobile) {
-					font-size: 13vw;
+				// smartphones
+				@media (max-width: $smartphones) {
+					font-size: 10vw;
+					text-align: center;
 				}
 
 				.wordFocus {
@@ -95,14 +92,15 @@ $planet-size: 250px;
 			.pageLogo {
 				width: 10em;
 
-				// smartphones only
-				@media (max-width: $mobile) {
-					width: 25vw;
+				// tablets
+				@media (max-width: $tablets) {
+					width: 6em;
 				}
 
-				// tablet only
-				@media (max-width: $tablet) {
-					width: 20vw;
+				// smartphones
+				@media (max-width: $smartphones) {
+					width: 30vw;
+					margin-top: 1em;
 				}
 			}
 		}
@@ -111,139 +109,170 @@ $planet-size: 250px;
 			position: absolute;
 			transform: translate(50%, -50%);
 
-			$ratio: 1;
-
-			// mobiles
-			@media (max-width: $tablet) {
-				$ratio: 1.3;
-				transform: translate(50%, -50%);
-			}
-
 			&:nth-child(1) {
-				height: $circle-size * $ratio;
-				top: 15%;
-				left: 5%;
+				height: 8vw;
+				top: 10%;
+				left: 2%;
 
-				// mobiles
-				@media (max-width: $tablet) {
-					top: 55%;
-					left: -15%;
+				// smartphones
+				@media (max-width: $smartphones) {
+					height: 20vw;
+					top: 19%;
+					left: -20%;
 				}
 			}
 
 			&:nth-child(2) {
-				height: $circle-size * .75 * $ratio;
+				height: 4vw;
 				top: 80%;
-				left: 65%;
+				left: 80%;
 
-				// mobiles
-				@media (max-width: $tablet) {
+				// tablets
+				@media (max-width: $tablets) {
+					height: 4vw;
+					top: 90%;
+					left: 85%;
+				}
+
+				// smartphones
+				@media (max-width: $smartphones) {
+					height: 10vw;
 					top: 85%;
-					left: 89%
+					left: 75%;
 				}
 			}
 
 			&:nth-child(3) {
-				height: $circle-size * 1.5 * $ratio;
+				height: 10vw;
 				top: 2%;
 				right: 5%;
 
-				// mobiles
-				@media (max-width: $tablet) {
-					left: 50%
+				// smartphones
+				@media (max-width: $smartphones) {
+					height: 35vw;
+					top: 2%;
+					right: 1%;
 				}
 			}
 		}
 	}
 
 	.introduction {
+		margin-top: 5em;
+		padding: 0 10vw;
+		display: grid;
+		grid-template-columns: 4fr 1fr;
+		grid-template-areas:
+		"title   ."
+		"content icon";
 
+		// tablets
+		@media (max-width: $tablets) {
+			margin-top: 4em;
+			grid-template-columns: 1fr;
+			grid-template-areas:
+			"title"
+			"content"
+			"icon";
+		}
+
+		// smartphones
+		@media (max-width: $smartphones) {
+			padding: 0;
+		}
 
 		h2 {
-			width: 55vw;
-			color: $dark-green;
-			padding: 1em 1.5em;
+			grid-area: title;
+			margin-bottom: .5em;
+			text-align: center;
 			font-size: 2.5em;
-			letter-spacing: 2px;
+			letter-spacing: 1px;
+			color: $dark-green;
 
-			// mobiles
-			@media (max-width: $tablet) {
-				width: 100vw;
-				padding: .5em 1.5em 1em 1.5em;
-				font-size: 8vw;
+			// tablets
+			@media (max-width: $tablets) {
+				font-size: 4vw;
 				letter-spacing: 0;
-				text-align: center;
+			}
+
+			// smartphones
+			@media (max-width: $smartphones) {
+				font-size: 8vw;
 			}
 		}
 
-		.card {
+		.background {
+			grid-area: content;
+			background: $green;
+			border-radius: 35px;
+			padding: 2.5em;
+
+			p {
+				color: $yellow;
+				font-size: 1.5em;
+				font-weight: 300;
+				line-height: 30px;
+				letter-spacing: 1px;
+
+				// tablets
+				@media (max-width: $tablets) {
+					font-size: 3vw;
+					text-align: justify;
+					line-height: 3.75vw;
+					letter-spacing: 1px;
+				}
+
+				// smartphones
+				@media (max-width: $smartphones) {
+					font-size: 6vw;
+					text-align: center;
+					line-height: 6.5vw;
+					letter-spacing: 0;
+					word-spacing: 3px;
+				}
+			}
+		}
+
+		.icon-background {
+			grid-area: icon;
+			background: $dark-green;
+			margin: 2em 0;
+			padding: 1.75em;
+			border-radius: 0 35px 35px 0;
 			display: flex;
+			justify-content: center;
 			align-items: center;
 
-			// mobiles
-			@media (max-width: $tablet) {
-				flex-direction: column;
+			// tablets
+			@media (max-width: $tablets) {
+				width: 30vw;
+				height: 30vw;
+				margin: 0;
+				padding: 2em;
+				border-radius: 0 0 35px 35px;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
 			}
 
-			.background {
-				background: $green;
-				width: 50vw;
-				padding: 3em ($planet-size / 2) 3em 3em;
-				border-radius: 0 50px 50px 0;
-
-				// mobiles
-				@media (max-width: $tablet) {
-					width: 100%;
-					padding: 4em 3em ($planet-size / 1.5) 3em;
-					border-radius: 50px;
-				}
-
-				// smartphones only
-				@media (max-width: $mobile) {
-					padding: 3em 2em ($planet-size / 1.5) 2em;
-				}
-
-				p {
-					color: $yellow;
-					text-align: justify;
-					font-size: 1.5em;
-					font-weight: 500;
-					letter-spacing: 1px;
-					line-height: 32px;
-				}
-
-				// <p> tablets only
-				@media (max-width: $tablet) {
-					p {
-						text-align: center;
-						font-size: 3em;
-						letter-spacing: 2px;
-						line-height: 55px;
-					}
-				}
-
-				// <p> smartphones only
-				@media (max-width: $mobile) {
-					p {
-						text-align: center;
-						font-size: 1.5em;
-						letter-spacing: 1px;
-						line-height: 27px;
-					}
-				}
+			// smartphones
+			@media (max-width: $smartphones) {
+				padding: 1.25em;
 			}
+
 
 			.planet {
-				display: block;
-				position: relative;
-				left: -110px;
-				transform: rotate(-12deg);
-				height: $planet-size;
+				width: 100%;
+				transform: rotate(-15deg);
 
-				// mobiles
-				@media (max-width: $tablet) {
-					left: 0;
-					top: -125px;
+				// tablets
+				@media (max-width: $tablets) {
+					width: 90%;
+				}
+
+				// smartphones
+				@media (max-width: $smartphones) {
+					width: 100%;
 				}
 			}
 		}
