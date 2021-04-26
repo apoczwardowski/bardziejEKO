@@ -72,14 +72,14 @@ export default {
 		position: fixed;
 		right: 0;
 		width: 100%;
-    height: 100vh;
-    transition: .3s ease;
+		height: 100vh;
+		transition: .3s ease;
 		z-index: 10000;
 
 		.navElements{
 			position: absolute;
-      width: 100%;
-      height: 100%;
+			width: 100%;
+			height: 100%;
 			top: 0;
 			right: -100%;
 			background: #000;
@@ -87,8 +87,8 @@ export default {
 			background: $light-green;
 			padding-right: 40px;
 			padding-left: 40px;
-      padding-top: 50px;
-      display: block;
+			padding-top: 50px;
+			display: block;
 			justify-content: space-around;
 
       .navElementsContainer{
@@ -96,13 +96,15 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        .navElement{
+        
+		.navElement{
           display: block;
           margin: 10px;
           text-align: center;
           line-height: 100px;
           font-size: 20px;
-          border: 2px solid darken($light-green, 5);
+		  background-color: darken($light-green, 20);
+		  border-radius: 50px;
           height: 100px;
           width: 280px;
           color: lighten($yellow , 5);
@@ -164,7 +166,9 @@ export default {
   @media(min-width: 1025px){
     #navbar{
       width: 700px;
-      .navElements{
+	  height: auto;
+      
+	  .navElements{
         height: 50px;
         border-radius: 200px;
         width: 700px;
@@ -184,6 +188,7 @@ export default {
             height: 20px;
             line-height: 20px;
             width: auto;
+			background-color: transparent;
           }
         }
       }
