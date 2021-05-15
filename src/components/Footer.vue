@@ -1,13 +1,11 @@
 <template>
 	<footer id="footer">
-		<div class="image">
-			*image*
-		</div>
+		<div class="image"></div>
 		<section class="content">
 			<div class="link">
 				<a href="#">
 					<div class="container">
-						<img>
+						<img src="@/assets/images/fb.svg" alt="fanpage facebook">
 						<div class="text">
 							<p>/bardziejeko</p>
 							<span>Zobacz nasz fanpage</span>
@@ -18,9 +16,9 @@
 			<div class="link">
 				<a href="#">
 					<div class="container">
-						<img>
+						<img src="@/assets/images/envelope.svg" alt="email kontaktowy">
 						<div class="text">
-							<p>bardziej@eko.gov</p>
+							<p>kontakt@bardziejeko.edu.pl</p>
 							<span>Skontaktuj się z nami</span>
 						</div>
 					</div>
@@ -28,7 +26,7 @@
 			</div>
 			<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh arcu eget vulputate ultricies sed nisl molestie lacus. Nisi pellentesque pulvinar sit nisl, augue nibh vel posuere quis. Dolor etiam laoreet ultrices quis fermentum. Quisque non ullamcorper amet posuere duis felis in.</p>
 			<div class="zwolnieni-logo">
-				<img>
+				<img src="@/assets/images/zwzt.svg" alt="Zwolnieni Z Teorii">
 			</div>
 			<div class="copyright">
 				<span>&copy; BardziejEKO 2021</span>
@@ -64,8 +62,10 @@ $smartphones: 760px;
 	}
 
 	.image {
-		height: 250px;
-		background: $green;
+		height: 245px;
+		background: url('../assets/images/clouds.svg');
+		background-repeat: repeat-x;
+		background-position: center;
 	}
 
 	.content {
@@ -147,7 +147,6 @@ $smartphones: 760px;
 			img {
 				width: 150px;
 				height: 150px;
-				background: #000;
 
 				@media (max-width: $tablets) {
 					width: 80px;
@@ -159,7 +158,6 @@ $smartphones: 760px;
 		.description {
 			grid-area: desc;
 			padding: 2em 0;
-			// color: #8BBE47;
 			color: $green;
 			text-align: center;
 			font-size: 1.5vw;
@@ -182,7 +180,7 @@ $smartphones: 760px;
 			img {
 				width: 400px;
 				height: 150px;
-				background: #000;
+				opacity: .8;
 
 				@media (max-width: $smartphones) {
 					width: 200px;

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="fb.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 48.257324 48.257324"
+   height="48.257324mm"
+   width="48.257324mm">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="1912"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="83.398054"
+     inkscape:cx="48.320744"
+     inkscape:zoom="3.3262272"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-12.78002,36.431839)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Warstwa 1">
+    <rect
+       y="-30.439339"
+       x="18.77252"
+       height="36.272324"
+       width="36.272324"
+       id="rect833"
+       style="fill:#729d39;fill-opacity:1;stroke:#729d39;stroke-width:11.985;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers" />
+    <path
+       style="fill:#36622b;fill-opacity:1;stroke-width:0.198693"
+       d="M 44.45743,11.825405 V -6.9434343 h 6.299993 l 0.9432,-7.3145247 H 44.45743 v -4.670106 c 0,-2.117681 0.588135,-3.560995 3.625175,-3.560995 l 3.873341,-0.0019 v -6.542002 c -0.670196,-0.08883 -2.969284,-0.28791 -5.644103,-0.28791 -5.584497,0 -9.407769,3.408595 -9.407769,9.668651 v 5.394345 H 30.58779 v 7.3145257 h 6.316085 V 11.825486 Z"
+       fill="#3c5a9a"
+       id="path847" />
+  </g>
+</svg>
