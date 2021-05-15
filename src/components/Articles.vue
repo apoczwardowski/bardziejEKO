@@ -125,7 +125,7 @@ $tablet: 1030px;
 	color: $dark-green;
 	font-size: 3vw;
 	width: 70vw;
-	margin-bottom: 7vw;
+	margin-bottom: 4vw;
 }
 
 .articles {
@@ -133,7 +133,7 @@ $tablet: 1030px;
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: space-evenly;
-	padding: 4em 0em 0em 0em;
+	padding: 4em 5em 0em 5em;
 }
 
 .article {
@@ -141,9 +141,9 @@ $tablet: 1030px;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 10vw;
+	margin-bottom: 9vw;
 	height: 18vw;
-	width: 30vw;
+	width: 27vw;
 	border-radius: 4vw 4vw 4vw 4vw;
 	background: $green;
 
@@ -244,9 +244,13 @@ $tablet: 1030px;
 .articlesheader {
 	text-align: center;
 	color: $dark-green;
-	font-size: 4.5vw;
+	font-size: 8vw;
 	width: 90vw;
-	margin-bottom: 7vw;
+	margin-bottom: 0vw;
+}
+
+.articles {
+		padding: 4em 0em 0em 0em;
 }
 
 .article {
