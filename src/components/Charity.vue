@@ -169,6 +169,7 @@ $tablet: 1030px;
 		align-items: center;
 		width: 46vw;
 		margin-bottom: 10vw;
+		transform: scale(.80);
 
 		.charitycircle {
 			display: flex;
@@ -222,6 +223,7 @@ $tablet: 1030px;
 		flex-direction: row;
 		align-items: center;
 		margin-top: 10vw;
+		transform: scale(.80);
 
 		.charitycircle {
 			display: flex;
