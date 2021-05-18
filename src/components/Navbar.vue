@@ -23,18 +23,15 @@ export default {
 	name: 'Navbar',
 	data(){
 		return {
-			navTimeline: new gsap.timeline({
-				defaults:{
-					duration: 0.5,
-					ease: "power4.inOut",
-				}
-			})
+			navTimeline: new gsap.timeline({ defaults:{ duration: 0.5, ease: "power4.inOut" } }),
+			isNavVisible: false
 		}
 
 	},
 	methods: {
-		navAnimation: function (){
-			this.navTimeline.reversed(!this.navTimeline.reversed())
+		navAnimation: async function (){
+			await this.navTimeline.reversed(!this.navTimeline.reversed())
+			this.isNavVisible = !this.isNavVisible
 		}
 	},
 
@@ -42,18 +39,18 @@ export default {
 		this.navTimeline.to('.navElements',0.5,{
 			x: '-100%',
 		})
-				.to('.topMenuBtn',{
-					top: '50%',
-					rotate: '45deg'
-				},'-=0.25')
-				.to('.bottomMenuBtn',{
-					bottom: '50%',
-					rotate: '-45deg'
-				}, '-=0.5')
-				.to('.navElement',{
-					opacity: 1,
-					stagger: 0.05,
-				}, '-=0.5').reverse()
+			.to('.topMenuBtn',{
+				top: '50%',
+				rotate: '45deg'
+			},'-=0.25')
+			.to('.bottomMenuBtn',{
+				bottom: '50%',
+				rotate: '-45deg'
+			}, '-=0.5')
+			.to('.navElement',{
+				opacity: 1,
+				stagger: 0.05,
+			}, '-=0.5').reverse()
 	},
 }
 
@@ -69,7 +66,7 @@ export default {
 
 @media(min-width: 280px){
 	#navbar {
-		position: fixed;
+		position: absolute;
 		right: 0;
 		width: 100%;
 		height: 100vh;
@@ -77,7 +74,7 @@ export default {
 		z-index: 10000;
 
 		.navElements{
-			position: absolute;
+			position: fixed;
 			width: 100%;
 			height: 100%;
 			top: 0;
@@ -96,7 +93,7 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        
+
 		.navElement{
           display: block;
           margin: 10px;
@@ -120,12 +117,12 @@ export default {
 
 
 		.menuBtn{
-			position: absolute;
+			position: fixed;
 			height: 50px;
 			width: 50px;
 			border-top-left-radius: 50px;
 			border-bottom-left-radius: 50px;
-			right: 0px;
+			right: 0;
 			top: 0;
 			border: none;
 			background: $light-green;
@@ -159,7 +156,10 @@ export default {
 
   @media(min-width: 768px){
     #navbar{
-      width: 350px;
+	  .navElements {
+		  width: 45%;
+		  right: -45%;
+	  }
     }
   }
 
@@ -167,11 +167,11 @@ export default {
     #navbar{
       width: 700px;
 	  height: auto;
-      
+
 	  .navElements{
         height: 50px;
         border-radius: 200px;
-        width: 700px;
+		width: 45%;
 
         .navElementsContainer{
           display: flex;
@@ -187,7 +187,7 @@ export default {
             font-size: 15px;
             height: 20px;
             line-height: 20px;
-            width: auto;
+            width: 100px;
 			background-color: transparent;
           }
         }
