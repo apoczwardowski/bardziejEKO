@@ -3,7 +3,7 @@
     <Navbar/>
     <Hero class="element"/>
     <main>
-      <Diagrams class="element"/>
+      <!-- <Diagrams class="element"/> -->
       <Articles class="element"/>
       <Quiz class="element"/>
       <Charity class="element"/>
@@ -11,10 +11,12 @@
     <Footer class="element"/>
   </div>
 </template>
+
+
 <script>
 import Navbar from '@/components/Navbar.vue'
 import Hero from '@/components/Hero.vue'
-import Diagrams from '@/components/Diagrams.vue'
+// import Diagrams from '@/components/Diagrams.vue'
 import Articles from '@/components/Articles.vue'
 import Quiz from '@/components/Quiz.vue'
 import Charity from '@/components/Charity.vue'
@@ -25,7 +27,7 @@ export default {
   components: {
     Navbar,
     Hero,
-    Diagrams,
+    // Diagrams,
     Articles,
     Quiz,
     Charity,
@@ -43,6 +45,10 @@ export default {
 // $dark-green;
 
 // $padding-main;
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
