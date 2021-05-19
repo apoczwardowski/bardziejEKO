@@ -1,57 +1,14 @@
-<template v-for="(title, text) in articles">
+<template>
 	<section id="articles" >
 		<h1 class="articlesheader">Artykuły opisujące szczegółowo sytuację z zanieczyszczeniem na świecie</h1>
 		<div class="articles">
-			<div class="article">
+			<div class="article" v-for="(article, index) in articles" :key="index">
 				<div class="artheader">
-					<h1>{{  articles.articleone.title  }}</h1>
+					<h1>{{  article.title  }}</h1>
 				</div>
 					<div class="artcont">
 					<p>
-						{{  articles.articleone.text  }}
-					</p>
-				</div>
-				<a href="#" class="artfull">
-
-				</a>
-			</div>
-
-			<div class="article">
-				<div class="artheader">
-					<h1>{{  articles.articletwo.title  }}</h1>
-				</div>
-				<div class="artcont">
-					<p>
-						{{  articles.articletwo.text  }}
-					</p>
-				</div>
-				<a href="#" class="artfull">
-
-				</a>
-			</div>
-
-			<div class="article">
-				<div class="artheader">
-					<h1>{{  articles.articlethree.title  }}</h1>
-				</div>
-
-				<div class="artcont">
-					<p>
-						{{  articles.articlethree.text  }}
-					</p>
-				</div>
-				<a href="#" class="artfull">
-
-				</a>
-			</div>
-			<div class="article">
-				<div class="artheader">
-					<h1>{{  articles.articlethree.title  }}</h1>
-				</div>
-
-				<div class="artcont">
-					<p>
-						{{  articles.articlethree.text  }}
+						{{  article.text  }}
 					</p>
 				</div>
 				<a href="#" class="artfull">
@@ -67,36 +24,36 @@ export default {
 	name: 'Articles',
 	data() {
 		return {
-			articles: {
-				articleone: {
+			articles: [
+				{
 					title: "Article's Title",
 					text: `	Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 							Tempore est tenetur in accusamus, doloribus alias eius
 							consectetur molestias, sint perferendis numquam perspiciatis
 							tempora non odio. Ipsum excepturi quis enim culpa?`,
 				},
-				articletwo: {
+				{
 					title: "Second Article's Title",
 					text: `	Second Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 							Tempore est tenetur in accusamus, doloribus alias eius
 							consectetur molestias, sint perferendis numquam perspiciatis
 							tempora non odio. Ipsum excepturi quis enim culpa?`,
 				},
-				articlethree: {
+				{
 					title: "Third Article's Title",
 					text: `	Third Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 							Tempore est tenetur in accusamus, doloribus alias eius
 							consectetur molestias, sint perferendis numquam perspiciatis
 							tempora non odio. Ipsum excepturi quis enim culpa?`,
 				},
-				articlefour: {
+				{
 					title: "Fourth Article's Title",
 					text: `	Fourth Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 							Tempore est tenetur in accusamus, doloribus alias eius
 							consectetur molestias, sint perferendis numquam perspiciatis
 							tempora non odio. Ipsum excepturi quis enim culpa?`,
 				},
-			}
+			]
 		}
 	},
 }
@@ -123,9 +80,11 @@ $tablet: 1030px;
 .articlesheader {
 	text-align: center;
 	color: $dark-green;
-	font-size: 3vw;
+	font-size: 2.4vw;
+	letter-spacing: 1px;
 	width: 70vw;
 	margin-bottom: 4vw;
+	margin-top: 14vw;
 }
 
 .articles {
@@ -245,8 +204,9 @@ $tablet: 1030px;
 	text-align: center;
 	color: $dark-green;
 	font-size: 8vw;
+	letter-spacing: .2px;
 	width: 90vw;
-	margin-bottom: 0vw;
+	margin-bottom: 4vw;
 }
 
 .articles {

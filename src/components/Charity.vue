@@ -1,4 +1,4 @@
-<template v-for="(image, title) in charities">
+<template>
 	<section id="charity">
 		<div class="header">
 			<div class="charityheader">
@@ -10,56 +10,32 @@
 		<div class="charities">
 			<div class="charitiesleft">
 
-				<div class="charity">
+				<div class="charity" v-for="(charity, index) in charities" :key="index">
 
-					<div class="charitycircle">
-						<img src="@/assets/images/smoke.png" alt="background" class="backgroundimg">
-						<a href=""><img src="@/assets/images/arrow.svg" alt="arrow" class="arrow"></a>
+					<div class="charitycircle" v-if="(index % 2 == 0)">
+						<img :src="charity.image" alt="background" class="backgroundimg">
+						<a href=""><img src="@/assets/images/arrow.svg" alt="arrow" class="arrow"><p class="link">Przejdź</p></a>
 					</div>
 
-					<div class="charitytitle">
-						<p>{{  charities.charityone.title  }}</p>
-					</div>
-
-				</div>
-
-				<div class="charity">
-
-					<div class="charitycircle">
-						<img src="@/assets/images/smoke.png" alt="background" class="backgroundimg">
-						<a href=""><img src="@/assets/images/arrow.svg" alt="arrow" class="arrow"></a>
-					</div>
-
-					<div class="charitytitle">
-						<p>{{  charities.charitythree.title  }}</p>
+					<div class="charitytitle" v-if="(index % 2 == 0)">
+						<p>{{  charity.title  }}</p>
 					</div>
 
 				</div>
 
 			</div>
+
 			<div class="charitiesright">
-				<div class="charity">
 
-					<div class="charitytitle">
-						<p>{{  charities.charitytwo.title  }}</p>
+				<div class="charity" v-for="(charity, index) in charities" :key="index">
+
+					<div class="charitytitle" v-if="(index % 2 != 0)">
+						<p>{{  charity.title  }}</p>
 					</div>
 
-					<div class="charitycircle">
-						<img src="@/assets/images/smoke.png" alt="background" class="backgroundimg">
-						<a href=""><img src="@/assets/images/arrow.svg" alt="arrow" class="arrow"></a>
-					</div>
-
-				</div>
-
-				<div class="charity">
-
-					<div class="charitytitle">
-						<p>{{  charities.charityfour.title  }}</p>
-					</div>
-
-					<div class="charitycircle">
-						<img src="@/assets/images/smoke.png" alt="background" class="backgroundimg">
-						<a href=""><img src="@/assets/images/arrow.svg" alt="arrow" class="arrow"></a>
+					<div class="charitycircle" v-if="(index % 2 != 0)">
+						<img :src="charity.image" alt="background" class="backgroundimg">
+						<a href=""><img src="@/assets/images/arrow.svg" alt="arrow" class="arrow"><p class="link">Przejdź</p></a>
 					</div>
 
 				</div>
@@ -74,24 +50,24 @@ export default {
 	name: 'Charity',
 		data() {
 			return {
-				charities: {
-					charityone: {
-						image: "smoke",
+				charities: [
+					{
+						image: require(`../assets/images/smoke.png`),
 						title: "Zbiórka na walkę z emisją dwutlenku węgla 1",
 					},
-					charitytwo: {
-						image: "smoke",
+					{
+						image: require(`../assets/images/smoke.png`),
 						title: "Zbiórka na walkę z emisją dwutlenku węgla 2",
 					},
-					charitythree: {
-						image: "smoke",
+					{
+						image: require(`../assets/images/smoke.png`),
 						title: "Zbiórka na walkę z emisją dwutlenku węgla 3",
 					},
-					charityfour: {
-						image: "smoke",
+					{
+						image: require(`../assets/images/smoke.png`),
 						title: "Zbiórka na walkę z emisją dwutlenku węgla 4",
 					},
-				}
+				]
 			}
 		},
 	}
@@ -168,7 +144,7 @@ $tablet: 1030px;
 		flex-direction: row;
 		align-items: center;
 		width: 46vw;
-		margin-bottom: 10vw;
+		margin-bottom: 5vw;
 		transform: scale(.80);
 
 		.charitycircle {
@@ -184,16 +160,29 @@ $tablet: 1030px;
 
 			a {
 				position:absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 
 				.arrow{
-					width: 9vw;
+					width: 8vw;
 					transform: translate(15%, 2%);
+				}
+				.link {
+					position: absolute;
+					font-size: 1.2vw;
+					padding-left: .3em;
+					color: $dark-green;
+					transform: translateY(5%);
+					font-weight: 700;
+					letter-spacing: .6px;
 				}
 			}
 			.backgroundimg {
 				width: 14.5vw;
 			}
 		}
+
 		.charitytitle {
 			display: flex;
 			justify-content: center;
@@ -204,6 +193,7 @@ $tablet: 1030px;
 			height: 13vw;
 			padding-left: 7vw;
 			font-size: 2.5vw;
+			font-weight: 500;
 			z-index: 10;
 			border-end-end-radius: 4vw;
 			border-start-end-radius: 4vw;
@@ -222,7 +212,7 @@ $tablet: 1030px;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		margin-top: 10vw;
+		margin-top: 5vw;
 		transform: scale(.80);
 
 		.charitycircle {
@@ -238,16 +228,30 @@ $tablet: 1030px;
 
 			a {
 				position:absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 
 				.arrow{
-					width: 9vw;
+					width: 8vw;
 					transform: translate(15%, 2%);
+				}
+
+				.link {
+					position: absolute;
+					font-size: 1.2vw;
+					padding-left: .3em;
+					color: $dark-green;
+					transform: translateY(5%);
+					font-weight: 700;
+					letter-spacing: .6px;
 				}
 			}
 			.backgroundimg {
 				width: 14.5vw;
 			}
 		}
+
 		.charitytitle {
 			display: flex;
 			justify-content: center;
@@ -256,6 +260,7 @@ $tablet: 1030px;
 			color: $dark-green;
 			width: 30vw;
 			height: 13vw;
+			font-weight: 500;
 			padding-right: 7vw;
 			padding-left: 2vw;
 			font-size: 2.5vw;
@@ -294,7 +299,7 @@ $tablet: 1030px;
 	.charitiesleft {
 		transform: translate(15%, 7%);
 		.charity {
-			margin-bottom: 20vw;
+			margin-bottom: 10vw;
 			@supports (-moz-appearance:none) {
 				transform: scale(1.2);
 			}
@@ -304,7 +309,7 @@ $tablet: 1030px;
 	.charitiesright {
 		transform: translateX(-15%);
 		.charity {
-			margin-top: 20vw;
+			margin-top: 10vw;
 			@supports (-moz-appearance:none) {
 				transform: scale(1.2);
 			}
@@ -341,7 +346,7 @@ $tablet: 1030px;
 	.charitiesleft {
 		transform: translate(40%, 15%);
 		.charity {
-			margin-bottom: 50vw;
+			margin-bottom: 25vw;
 			@supports (-moz-appearance:none) {
 				transform: scale(1.6);
 			}
@@ -351,7 +356,7 @@ $tablet: 1030px;
 	.charitiesright {
 		transform: translateX(-40%);
 		.charity {
-			margin-top: 50vw;
+			margin-top: 25vw;
 			@supports (-moz-appearance:none) {
 				transform: scale(1.6);
 			}
