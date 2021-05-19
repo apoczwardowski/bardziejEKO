@@ -115,7 +115,7 @@ $smartphones: 760px;
 
 					p {
 						color: #8BBE47;
-						font-size: 1.75em;
+						font-size: 1.75vw;
 						font-weight: 500;
 						letter-spacing: .5px;
 
@@ -124,7 +124,7 @@ $smartphones: 760px;
 						}
 
 						@media (max-width: $smartphones) {
-							font-size: 5vw;
+							font-size: 4vw;
 						}
 					}
 
@@ -134,30 +134,35 @@ $smartphones: 760px;
 						font-weight: 300;
 
 						@media (max-width: $tablets) {
-							font-size: 2vw;
+							font-size: 1.7vw;
 						}
 
 						@media (max-width: $smartphones) {
-							font-size: 3.5vw;
+							font-size: 3.25vw;
 						}
 					}
 				}
 			}
 
 			img {
-				width: 150px;
-				height: 150px;
+				width: 9vw;
+				height: 9vw;
 
 				@media (max-width: $tablets) {
 					width: 80px;
 					height: 80px;
+				}
+
+				@media (max-width: $smartphones) {
+					width: 60px;
+					height: 60px;
 				}
 			}
 		}
 
 		.description {
 			grid-area: desc;
-			padding: 2em 0;
+			padding: 1em 0;
 			color: $green;
 			text-align: center;
 			font-size: 1.5vw;
